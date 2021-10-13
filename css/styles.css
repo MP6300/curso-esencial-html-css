@@ -74,3 +74,34 @@ h3{
     font-size: 1.5em;
 }
 
+
+pre{
+    background: #FEC62E;
+}
+
+.hero{
+    height: 350px;
+    background-image: linear-gradient(to top, rgb(255, 255, 255, 0.3), transparent), url(../img/patron-1.png);
+}
+
+.section-content{
+    counter-reset: titlelist;
+}
+
+.section-content h3{
+    counter-increment: titlelist;
+}
+
+.section-content h3::before{
+    content: counter(titlelist);
+
+}
+
+.section-cointent h3::after{
+    content: '';
+    width: 32px;
+    height: 4px;
+    display: block;
+    background: #424242;
+    
+}
