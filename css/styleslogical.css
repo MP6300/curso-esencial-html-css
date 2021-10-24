@@ -28,33 +28,64 @@
 
 :root{
     font-size: 18px;
-    --gray30: #212121;
-    --gray20: #212429;
-    --gray10: #616161;
+    --white30: white;
+    --white20:  #A5A3A5;
+    --white10: #3A3539;
+}
+
+html{
+    scroll-behavior: smooth;
 }
 
 body{
-    color: var(--gray30);
-    font-family: 'Roboto', sans-serif;
+    color: var(--white30);
+    font-family: 'Nunito', sans-serif;
+    background: #251F24;
+    margin: 0;
     
 }
 
 a{
-    color: var(--gray30);
+    color: var(--white30);
     
+}
+
+.header{
+    position: sticky;
+    inset-block-start: -32px;
+}
+
+.header-content{
+    position: relative;
+}
+
+.header-content ol li:hover{
+    background: #5551FF;
 }
 
 header{
     font-size: 14px;
+    color: var(--white30);
+    position: absolute;
+    inset-block-start: 64px;
+    inset-inline-start: -208px;
+    inline-size: 188px;
+    
+
 }
 
 header, a{
-    color: var(--gray10);
+    color: var(--white20);
     text-decoration: none;
 }
 
+header li{
+    color: var(--white20);
+    margin-block-end: 16px;
+}
+
 header, a:hover{
-    color: var(--gray30);
+    color: var(--white30);
 }
 
 nav, details, summary{
@@ -64,28 +95,70 @@ nav, details, summary{
 
 h1{
     font-size: 60px;
+    font-weight: normal;
+    margin-block-start: 64px;
+    margin-block-end: 16px;
 }
 
 h2{
     font-size: 2em;
+    font-weight: 600;
+    margin-block: 40px;
 }
 
 h3{
     font-size: 1.5em;
+    font-weight: normal;
+    margin-block: 16px;
 }
 
+hr{
+    margin-block: 40px;
+    border-color: var(--white10);
+}
 
 pre{
-    background: #FEC62E;
+    background: var(--white10);
+    padding: 40px;
+    overflow: auto;
+
+    border-radius: 8px;
+    border: 10px solid #5551FF;
+    box-shadow: -10px 10px 0 0 #ABAAF6 ;
+}
+
+p{
+    color: var(--white20);
+}
+
+blockquote{
+    background: var(--white10);
+    margin-block-start: 80px;
+    margin-block-end: 63px;
+    border-radius: 8px;
+    padding-inline-start: 24px;
+    padding-inline-end: 24px;
+    padding-block-start: 24px;
+    padding-block-end: 24px;
+    line-height: 32px;
+    font-size: 24px;
+
 }
 
 .hero{
     height: 350px;
-    background-image: linear-gradient(to top, rgb(255, 255, 255, 0.3), transparent), url(../img/patron-1.png);
+    background: linear-gradient(96.07deg, #314755 30.63%, #26A0DA 102.18%);
 }
 
 .section-content{
     counter-reset: titlelist;
+}
+
+.section-content img{
+    margin-block-start: 40px;
+    display: block;
+    max-inline-size: 100%;
+
 }
 
 .section-content, h3{
@@ -93,7 +166,7 @@ pre{
 }
 
 .section-content, h3::before{
-    content: counter(titlelist);
+    content: counter(titlelist, decimal)'. ';
     
 }
 
@@ -103,4 +176,48 @@ pre{
     height: 4px;
     display: inline-block;
     background: #414141;
+}
+
+
+
+.wrapper{
+    max-inline-size: 902px;
+    margin: auto;
+
+}
+
+.main-content{
+    padding-inline: 16px;
+}
+
+/* slider de videos */
+
+.slider-bullet-list{
+    text-align: center;
+    margin-block-start: 16px;
+}
+
+.slider-bullet{
+   display: inline-block;
+   inline-size: 12px;
+   block-size: 12px;
+   background: #5551FF;
+   border-radius: 50%;
+}
+
+.slider-container{
+   display: block;
+   overflow: hidden;
+   scroll-behavior: smooth;
+   white-space: nowrap;
+   
+
+}
+
+.video{
+   margin: 0;
+   display: inline-block;
+   width: 100%;
+   height: auto;
+   aspect-ratio: 16/9;
 }
